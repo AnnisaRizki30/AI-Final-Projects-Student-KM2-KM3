@@ -1,0 +1,127 @@
+{
+   "intents": [
+     {
+       "tag": "greeting",
+       "patterns": [
+         "hallo",
+         "hai",
+         "halo",
+         "hei",
+         "hi",
+         "hy",
+         "pagi",
+         "morning",
+         "siang",
+         "afternoon",
+         "sore",
+         "malam",
+         "bro",
+         "sis",
+         "kawan",
+         "annyeong",
+         "spadaa",
+         "woi",
+         "permisi",
+         "misi",
+         "yuhu"
+       ],
+       "responses": [
+         
+         "Hi Selamat Datang di MoewichaBOT, Apa yang ingin kamu tahu tentang Monkeypox?",
+         "Hallo, Moewicha disini. Apa yang ingin kamu ketahui tentang Monkeypox?"
+       ]
+     },
+     {
+       "tag": "goodbye",
+       "patterns": [
+         "Dah",
+         "Dadah",
+         "Bye",
+         "Byee",
+         "Bay",
+         "Babay",
+         "Bai",
+         "Papay",
+         "Good bye",
+         "Selamat tinggal",
+         "Sampai jumpa",
+         "See you"
+       ],
+       "responses": [
+         "Senang bisa membantumu", 
+         "Dengan senang hati bisa membantu", 
+         "My pleasure", 
+         "You are welcome"
+        ]
+     },
+     {
+       "tag": "terimakasih",
+       "patterns": [
+         "Thanks",
+         "Thank you",
+         "Terima kasih",
+         "Makasih",
+         "Terima kasih banyak",
+         "Tencu",
+         "Tengkyu"
+       ],
+       "responses": [
+         "Dengan senang hati :)",
+         "Sama-sama :)",
+         "It's okay :)"
+       ]
+     },
+     {
+       "tag": "menu",
+       "patterns": [
+         "menu",
+         "MENU",
+         "Menu"
+       ],
+       "responses": [
+         "1. Apa itu Monkeypox? \n\n\n 2.Gejala Virus Monkeypox \n\n\n 3.Cara Penyebaran Virus Monkeypox \n\n\n 4.Cara Pencegahan Virus Monkeypox"
+       ]
+     },
+     {
+       "tag": "1_Pengertian",
+       "patterns": ["1", "1.", "1 "],
+       "responses": [
+         "Monkeypox atau cacar monyet adalah penyakit yang disebabkan oleh virus monkeypox. Ini adalah infeksi virus zoonosis, artinya dapat menyebar dari hewan ke manusia. Itu juga dapat menyebar dari manusia ke manusia lain dan dari lingkungan ke manusia."        
+       ]
+     },
+     {
+       "tag": "2_Gejala",
+       "patterns": ["2", "2.", "2 "],
+       "responses": [
+         "Demam",
+         "Nyeri kepala hebat",
+         "Sakit otot",
+         "Lemas",
+         "Pembengkakan kelenjar getah bening (di leher, ketiak atau selangkangan) dan ruam atau lesi kulit",
+         "Ruam cenderung terkonsentrasi pada wajah, telapak tangan dan telapak kaki. Ruam juga dapat ditemukan di mulut, alat kelamin, dan mata. Ruam monkeypox terkadang disalahartikan sebagai sifilis atau herpes."
+         ]
+     },
+     {
+       "tag": "3_Penyebaran",
+       "patterns": ["3", "3.", "3 "],
+       "responses": [
+         "Cacar monyet menyebar dari orang ke orang melalui kontak dekat dengan seseorang yang memiliki ruam cacar monyet. Kontak dekat dapat berarti bertatap muka (seperti berbicara, bernapas, atau bernyanyi dekat satu sama lain yang dapat menghasilkan tetesan atau aerosol jarak pendek); kulit ke kulit (seperti sentuhan atau seks vaginal/anal); mulut ke mulut (seperti berciuman); atau kontak mulut ke kulit (seperti seks oral atau mencium kulit).",
+         "Lingkungan dapat terkontaminasi oleh virus cacar monyet: misalnya, ketika orang yang terinfeksi menyentuh pakaian, tempat tidur, handuk, benda, barang elektronik, dan permukaan. Orang lain yang menyentuh barang-barang ini dapat terinfeksi jika mereka memiliki luka atau lecet atau mereka secara tidak sengaja menyentuh mata, hidung, mulut, atau selaput lendir lainnya. Ini dikenal sebagai transmisi fomite.",
+         "Virus juga dapat menyebar selama kehamilan ke janin, selama atau setelah kelahiran melalui kontak kulit ke kulit, atau dari orang tua yang terkena cacar monyet ke bayi atau anak selama kontak dekat."
+        ]
+     },
+     {
+       "tag": "4_Pencegahan",
+       "patterns": ["4", "4.", "4 "],
+       "responses": [
+         "Lindungi diri dengan menghindari kontak langsung dengan hewan liar",
+         "Masak dengan matang makanan yang mengandung hewani atau daging sebelum dimakan",
+         "Kurangi kontak dekat dengan orang yang dicurigai terpapar virus Monkeypox",
+         "Sering-sering membersihkan tangan dengan sabun dan air atau bisa juga dengan handsanitizer",
+         "Sering bersihkan dan disinfeksi pembukaan barang yang biasa disentuh",
+         "Jika anda merasa terkena monkeypox diharapkan untuk segera mencari pertolongan medis dan mengisolasi diri sendiri agar tidak menyebarkan virus ke orang lain." 
+      ]
+     }
+    
+   ]
+}

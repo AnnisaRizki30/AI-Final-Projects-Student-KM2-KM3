@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>About Us</title>
+</head>
+
+<body>
+    <div class="card-body text-end">
+        <a href="{{ url_for('menu') }}">
+            <img class="img-fluid" style="width:90px;"
+            src={{ url_for('static', filename="images/back1.png" ) }}  alt="avatar">
+        </a>
+    </div>
+    <!-- Kelompok dan judul PA -->
+
+    <!-- Ayi Lesmana  -->
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body text-center">
+                <img class="rounded-circle img-fluid" style="width: 200px;"
+                src={{ url_for('static', filename="images/img_ayi.png" ) }} alt="avatar">
+                <h5 class="my-3">Ayi Lesmana</h5>
+                <p class="text-muted mb-1">UI Design & Deployment</p>
+                <p class="text-muted mb-4">Bandung, Indonesia</p>
+            </div>
+        </div> 
+        <div class="card">
+            <div class="col-sm-12">
+                <div class="card-block p-5">
+                    <h4 class="mb-3">Information</h4>
+                        <div class="border-top p-3">  
+                        </div>
+                        <div class="row mb-5">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p>Email</p>
+                                    <h6 class="text-muted">ayilesmana666@gmail.com</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p>Phone</p>
+                                    <h6 class="text-muted">0858-4624-8543</h6>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p>Address</p>
+                                    <h6 class="text-muted">Bandung, Indonesia</h6>
+                                </div>
+                        </div>
+                    <h4 class="mb-3">Hobbies - Skills - Education</h4>
+                    <div class="border-top p-3"></div>
+                    <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p>Hobbies</p>
+                                    <ul>
+                                        <li>Reading</li>
+                                        <li>Traveling</li>
+                                        <li>Sport</li>
+                                      
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <p>Skills</p>
+                                    <ul>
+                                        <li>Web Development</li>
+                                        <li>Pemrograman python</li>
+                                        <li>Administrasi</li>
+                                        <li>Etc</li>
+                                    </ul>
+                                </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12">
+                            <p>Education</p>
+                            <ul>
+                                <li>College : S1 Teknik Informatika Sekolah Tinggi Teknologi Bandung</li>
+                                <li>SHS : SMKN 1 Katapang</li>
+                                <li>JHS : Mts Al-Hijrah</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+
+        <!-- Dinar Sartika -->
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img class="rounded-circle img-fluid" style="width: 200px;"
+                    src={{ url_for('static', filename="images/img_dinar.png" ) }} alt="avatar">
+                    <h5 class="my-3">Dinar Sartika</h5>
+                    <p class="text-muted mb-1">Data Acquisition & Data Exploration</p>
+                    <p class="text-muted mb-4">Bandung, Indonesia</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="col-sm-12">
+                    <div class="card-block p-5">
+                        <h4 class="mb-3">Information</h4>
+                        <div class="border-top p-3"></div>
+                        <div class="row mb-5">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Email</p>
+                                <h6 class="text-muted"> didisr.dinarsartika@gmail.com</h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Phone</p>
+                                <h6 class="text-muted"> 0895-3652-39016 </h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Address</p>
+                                <h6 class="text-muted">Bandung, Indonesia</h6>
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Hobbies - Skills - Education</h4>
+                        <div class="border-top p-3"></div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Hobbies</p>
+                                <ul>
+                                    <li>Journaling</li>
+                                    <li>Painting</li>
+                                    <li>Traveling</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Skills</p>
+                                <ul>
+                                    <li>Ms Office</li>
+                                    <li>Korespondensi</li>
+                                    <li>Kearsipan dan Pengelolaan Administrasi</li>
+                                    <li>Design Grafis </li>
+                                    <li>Pemograman Python</li>
+                                    <li>Etc</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Education</p>
+                                <ul>
+                                    <li>College : S1 Marine and Fisheries Education in Indonesian University of Education </li>
+                                    <li>SHS : SMAN 1 Cicalengka</li>
+                                    <li>JHS : SMPN 1 Cicalengka</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rahma -->
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img class="rounded-circle img-fluid" style="width: 200px;"
+                    src={{ url_for('static', filename="images/img_rahma.png" ) }} alt="avatar">
+                    <h5 class="my-3">Nurrahmah Qolbunnisa</h5>
+                    <p class="text-muted mb-1">Evaluation</p>
+                    <p class="text-muted mb-4">Bandung, Indonesia</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="col-sm-12">
+                    <div class="card-block p-5">
+                        <h4 class="mb-3">Information</h4>
+                        <div class="border-top p-3"></div>
+                        <div class="row mb-5">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Email</p>
+                                <h6 class="text-muted"> nurrahmah12.nq@gmail.com</h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Phone</p>
+                                <h6 class="text-muted"> 0895-3399-30404</h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Address</p>
+                                <h6 class="text-muted">Bandung, Indonesia</h6>
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Hobbies - Skills - Education</h4>
+                        <div class="border-top p-3"></div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Hobbies</p>
+                                <ul>
+                                    <li>reading books</li>
+                                    <li>writing</li>
+                                    <li>listening to music</li>
+                        
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Skills</p>
+                                <ul>
+                                    <li>Ms. Office</li>
+                                    <li>Menulis cerita pendeks</li>
+                                    <li>Pemograman Python</li>
+                                
+                                    <li>Etc</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Education</p>
+                                <ul>
+                                    <li>College : S1 Telecommunication System in Indonesian University of Education </li>
+                                    <li>SHS : SMAN 1 Cimahi</li>
+                                    <li>JHS : SMPN 1 Batujajar</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+        <!-- Rusdi -->
+        <div class=" mt-5">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img class="rounded-circle img-fluid" style="width: 200px;"
+                    src={{ url_for('static', filename="images/img_rusdi.png" ) }} alt="avatar">
+                    <h5 class="my-3">Rusdi Fadli Nuryuda</h5>
+                    <p class="text-muted mb-1">Modeling</p>
+                    <p class="text-muted mb-4">Bandung, Indonesia</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="col-sm-12">
+                    <div class="card-block p-5">
+                        <h4 class="mb-3">Information</h4>
+                        <div class="border-top p-3"></div>
+                        <div class="row mb-5">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Email</p>
+                                <h6 class="text-muted">rusdifn08@upi.edu</h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Phone</p>
+                                <h6 class="text-muted">0851-7116-1679</h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Address</p>
+                                <h6 class="text-muted">Bandung, Indonesia</h6>
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Hobbies - Skills - Education</h4>
+                        <div class="border-top p-3"></div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Hobbies</p>
+                                <ul>
+                                    <li>Traveling</li>
+                                    <li>Reading</li>
+                                    <li>Listening</li>
+                                    <li>Gaming</li>
+                                    <li>Watching</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Skills</p>
+                                <ul>
+                                    <li>MS. Office</li>
+                                    <li>Full Stuck Designer</li>
+                                    <li>Android Developer</li>
+                                    <li>Design Graphic</li>
+                                    <li>Editing Video</li>
+                                    <li>Etc</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <p>Education</p>
+                                <ul>
+                                    <li>College : S1 Robotics Engineering in Indonesian University of Education</li>
+                                    <li>SHS : SMAN 1 Ciparay</li>
+                                    <li>JHS : SMPN 1 Pacet</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="img-fluid" style="width: 600px;"
+                src={{ url_for('static', filename="images/img_supernova.png" ) }} alt="avatar">
+                <!-- <h1 class="my-5">SUPERNOVA TEAM</h1> -->
+            </div>
+        </div>
+        
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

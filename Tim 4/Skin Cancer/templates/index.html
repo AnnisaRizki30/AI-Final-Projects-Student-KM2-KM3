@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>KINCER</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href={{ url_for('static', filename="img/favicon.ico" ) }} />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href={{ url_for('static', filename="CSS/mainn-css.css" ) }}
+        rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src={{ url_for('static', filename="img/images.jpeg" ) }} alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#services">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#prediksi">Detection Skincer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Skincer Type</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Our KINCER!</div>
+                <div class="masthead-heading text-uppercase">Skin Cancer Union</div>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Tentang Skin Cancer</h2>
+                    <h3 class="section-subheading text-muted">About Skin Cancer</h3>
+                </div>
+                <div class="row text-midle"></div>
+                        <p>Kanker kulit diberi nama sesuai dengan jenis sel yang terpengaruh yaitu sel kulit. Kanker kulit merupakan kanker yang umum terjadi. Menurut World Health Organization, sebanyak 160.000 orang mengidap kanker kulit setiap tahun di dunia. Tingkat kejadian kanker kulit di seluruh dunia telah meningkat pesat. Walaupun insidensi kanker kulit cukup tinggi, angka kematian yang diakibatkan olehnya tidak terlalu tinggi. Karena kulit adalah organ terbesar pada tubuh manusia, organ yang paling terlihat secara kasat mata, mudah bagi kita untuk mendeteksi adanya kelainan pada kulit. Di Indonesia, penderita kanker kulit terbilang relatif sedikit apabila dibandingkan dengan ketiga negara tersebut. Namun demikian, kanker kulit ini harus mendapat perhatian sedini mungkin, karena tidak hanya dapat menyebabkan kecacatan yang dapat merusak penampilan, tetapi juga dapat mengakibatkan kematian apabila sudah masuk ke stadium lanjut. Oleh karena itu, kanker kulit bisa dan harus diobati secara dini.</p>
+                    </div>
+        </section>
+        <!-- untuk prediction -->
+        <section class="page-section" id="prediksi">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Prediksi Skin Cancer</h2>
+                    <h3 class="section-subheading text-muted">Prediction Skin Cancer</h3>
+                </div>
+                <div style="text-align:justify;">
+                    <p>Dataset yang digunakan untuk melakukan training model prediction ini menggunakan HAM 10000 dataset yang berisi 10000 gambar yang mengklasifikan 7 tipe sel (kelas) kanker kulit.</p>
+                    <p>Dari tiga jenis kanker yang ganas (malignant), Melanoma (mel) paling berbahaya, Basal Cell Carcinoma (bcc) jarang menyebar ke seluruh tubuh tetapi harus segera diangkat dan Actinic Keratoses (akiec) tumbuh lambat dan sering dapat diobati tanpa operasi.</p>
+                    <p>Tipe kanker kulit jinak (Benign) -> Melanocytic Nevi (nv), Benign Keratosis (bkl), Vascular Lesions (vasc), Dermatofibroma (df).</p>
+                    <p>Tipe kanker kulit ganas (Malignant) -> Melanoma (mel), Basal Cell Carcinoma (bcc), Actinic Keratoses (akiec).</p>
+                    <p>Aplikasi ini hanya merupakan media screening pengklasifikasi tipe kanker kulit, bersifat prediktif sehingga hasil lebih pastinya tetap harus dilakukan pemeriksaan lebih lanjut oleh dokter kulit.</p>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <div class="text-center">
+                    <div class="predict-section">
+                        <form action=/Prediction  method="POST" enctype="multipart/form-data">
+                            <h4 style="font-size: 20px;color:#364f6b;font-weight:bold;font-family:comic sans ms;">Upload foto kulit untuk diprediksi!</h4>
+                    
+                            <div class="form-group">
+                                <label>
+                                    <input type="file" name="file" id="file" style="display:none" accept="image/*" required>
+                                    <img src={{ url_for('static', filename="img/up-arrow.png") }} width="30%" height="30%">
+                                </label>
+                            </div>
+                    
+                            <div class="container mt-3">
+                                Pastikan Anda mengunggah gambar yang terkait dengan <strong>AKIEC, BCC, BKL, DF, NV, VASC, MEL </strong>
+                            </div>
+                            <br>
+                            
+                            <input type="submit" class="btn btn-secondary" name="Submit dan Prediksi" value="Submit and Predict">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Jenis-jenis Kanker Kulit</h2>
+                    <h3 class="section-subheading text-muted">Skin Cancer Type</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0024654.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Actinic Keratoses (akiec)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0024436.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Basal cell carcinoma (bcc)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0024845.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Dermatofibroma (df)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0024358.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Benign keratosis-like lesions (bkl)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0000001.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Melanocytic nevi (nv)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0000035.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Melanoma (mel)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 7-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0024370.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Vascular lesions (vasc)</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 8-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0010808.jpg" ) }}  alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Seborrheic Keratosis</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 9-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src={{ url_for('static', filename="img/portfolio/ISIC_0024372.jpg" ) }} alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Squamous Cell Carcinoma</div>
+                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Tim Hebat Kincer</h2>
+                    <h3 class="section-subheading text-muted">Our Amazing Team</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src={{ url_for('static', filename="img/team/Nisa.jpeg" ) }}  alt="..." />
+                            <h4>Nissa Aljannah</h4>
+                            <p class="text-muted">Sekolah Tinggi Teknologi Cipasung</p>
+                            <p class="text-muted">Data Modeling & UI Design</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src={{ url_for('static', filename="img/team/suhaedi.jpeg" ) }}  alt="..." />
+                            <h4>Muhamad Suhaedi</h4>
+                            <p class="text-muted">Universitas Sultan Agung Tirtayasa</p>
+                            <p class="text-muted">Data Acquisition & Data Exploration</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src={{ url_for('static', filename="img/team/fara.jpeg" ) }}  alt="..." />
+                            <h4>Faradillah Ramadhati</h4>
+                            <p class="text-muted">Universitas Singaperbangsa Karawang</p>
+                            <p class="text-muted">Deployment Aplikasi Website</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src={{ url_for('static', filename="img/team/rizki.jpg" ) }}  alt="..." />
+                            <h4>Rizki Gunawan</h4>
+                            <p class="text-muted">Universitas Pendidikan Indonesia</p>
+                            <p class="text-muted">Data Evaluation & UI Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Actinic Keratoses (akiec)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0024654.jpg" ) }} alt="..." />
+                                    <p>adalah varian non-invasif yang umum dari karsinoma sel skuamosa yang dapat diobati tanpa operasi. Kulit di sekitarnya biasanya ditandai dengan kerusakan parah akibat sinar matahari (sinar UV). Akiec lebih sering terjadi pada wajah, sering terlihat seperti bercak kecil, kasar, bersisik pada kulit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Basal cell carcinoma (bcc)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0024436.jpg" ) }} alt="..." />
+                                    <p>adalah varian umum dari kanker kulit epitel yang jarang bermetastasis (menyebar). biasanya dimulai sebagai benjolan berbentuk mutiara di bagian wajah, telinga atau leher. Jika berkembang di bagian dada atau punggung, kanker ini terlihat seperti bagian kulit yang bersisik atau kering.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Dermatofibroma (df)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0024845.jpg" ) }} alt="..." />
+                                    <p>adalah lesi kulit jinak yang dianggap sebagai proliferasi jinak atau reaksi inflamasi terhadap minimal trauma. Presentasi dermatoskopik yang paling umum adalah garis retikuler di perifer dengan patch putih berpusat yang menunjukkan fibrosis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Benign keratosis-like lesions (bkl)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0024358.jpg" ) }} alt="..." />
+                                    <p>adalah kelas generik jinak yang termasuk seborrheic keratosis ("kutil pikun"). Dari pandangan dermatoscopic, bkl dapat menunjukkan bentuk yang meniru melanoma. Tampilan dermatoskopiknya bervariasi menurut lokasi anatomi dan jenisnya.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Melanocytic nevi (nv)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0000001.jpg" ) }} alt="..." />
+                                    <p>adalah tumor jinak dan muncul dalam berbagai varian, yang semuanya termasuk dalam seri nv. Varian ini mungkin berbeda secara signifikan dari sudut pandang dermatoskopik. Berbeda dengan melanoma, mereka biasanya simetris dalam hal distribusi warna dan struktur bentuk.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Melanoma (mel)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0000035.jpg" ) }} alt="..." />
+                                    <p>adalah salah satu bentuk kanker kulit yang lebih serius dan terkadang muncul dari tahi lalat yang ada di kulit. Lebih umum melanoma muncul sebagai tanda atau tahi lalat baru pada kulit normal. Melanoma dapat muncul di mana saja di tubuh tetapi paling sering terjadi pada pria di punggung, dan pada wanita di kaki.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Portfolio item 7 modal popup-->
+         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Vascular lesions (vasc)</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0024370.jpg" ) }} alt="..." />
+                                    <p>dalam kumpulan data dari angioma ceri hingga angiokeratoma dan granuloma piogenik. Angioma secara dermatoskopis ditandai dengan warna merah atau ungu dan struktur padat berbatas yang dikenal sebagai gumpalan merah (lakuna). Vasc adalah kelainan yang relatif umum pada kulit dan jaringan di bawahnya, lebih dikenal sebagai tanda lahir.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 8 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }} alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Seborrheic Keratosis</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0010808.jpg" ) }} alt="..." />
+                                    <p>adalah benjolan seperti kutil yang tumbuh di permukaan kulit. Kondisi ini lebih sering terjadi pada orang dewasa, terutama orang lanjut usia, dan jumlahnya dapat bertambah seiring waktu.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 9 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src={{ url_for('static', filename="img/close-icon.svg" ) }}  alt="Close modal" /></div>
+                    <div class="container"> 
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Squamous Cell Carcinoma</h2>
+                                    <p class="item-intro text-muted">Illustration</p>
+                                    <img class="img-fluid d-block mx-auto" src={{ url_for('static', filename="img/portfolio/ISIC_0024372.jpg" ) }} alt="..." />
+                                    <p>merupakan jenis kanker kulit yang sering terjadi pada bagian tubuh yang terpapar sinar ultraviolet (UV) matahari seperti kepala, leher, telinga, bibir, tangan, dan kaki.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src={{ url_for('static', filename="js/scripts.js" ) }}></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

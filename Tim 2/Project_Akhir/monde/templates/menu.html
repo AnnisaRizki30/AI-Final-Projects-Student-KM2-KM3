@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/bot-style.css') }}" rel="stylesheet">
+    <title>Menu</title>
+
+</head>
+
+<body>
+
+        <div class="card-body text-end">
+            <a href="{{ url_for('about') }}" >   
+                <img class="img-fluid" style="width:135px;"
+                src={{ url_for('static', filename="images/about_us.png" ) }}  alt="avatar">
+            </a>
+        </div>
+
+        <div class="card-body text-center">
+            <img class="img-fluid" style="width:600px;"
+            src={{ url_for('static', filename="images/welcome.png" ) }} alt="avatar">
+        </div>
+
+        <div class="card-body text-center">
+            <a href="{{ url_for('image_detection') }}" >   
+                <img class="img-fluid" style="width:300px;"
+                src={{ url_for('static', filename="images/camera.jpg" ) }} alt="avatar">
+            </a>
+            <a href="{{ url_for('realtime_detection') }}" >   
+                <img class="img-fluid" style="width:300px;"
+                src={{ url_for('static', filename="images/video.jpg" ) }} alt="avatar">
+            </a>
+        </div>
+
+        <!-- Proces Chatbot -->
+        <div class="container mt-5">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="{{ url_for('static', filename='images/bot.png') }}" width="50" height="50" alt="image">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header" style="text-align: left; margin-left:20px; color: #000;">Moewicha BOT</h4>
+                            <p class="chatbox__description--header" style="text-align: left; margin-left:20px; color: #000;">Halo!! Saya Moewicha, Apakah ada yang ingin ditanyakan terkait MonkeyPox Disease?</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write message in here...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button>       
+                        <img class="img-fluid" width="50" height="50"
+                        src={{ url_for('static', filename="images/chat.png" ) }} alt="avatar">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script>
+        $SCRIPT_ROOT = '{{ request.script_root|tojson }}';
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+ 
+  <link rel="stylesheet" type="text/css" href={{ url_for('static', filename="css/bootstrap.css" ) }} />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href={{ url_for('static', filename="css/main-style.css" ) }} rel="stylesheet" />
+  <link href={{ url_for('static', filename="css/responsive.css" ) }} rel="stylesheet" />
+
+  <title>Monkeypox Detection</title>
+
+</head>
+
+<body>
+  <div class="top_container">
+    <header class="header_section">
+      <div class="container"> 
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{{ url_for('home') }}">
+            <span>
+              MONKEYPOX DETECTION
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+    </header>
+    <section class="hero_section ">
+      <div class="hero-container container">
+        <div class="hero_detail-box">
+          <h1> What Is
+               MonkeyPox?
+        </h1>
+          <p>
+            Monkeypox is a viral zoonosis (a virus transmitted to humans from animals). 
+            It is caused by the monkeypox virus which belongs to the Orthopoxvirus genus of the Poxviridae family. 
+            Monkeypox virus is transmitted from one person to another by close contact with lesions, body fluids, respiratory droplets and contaminated materials such as bedding. </p>
+          <div class="hero_btn-continer">
+            <a href="{{ url_for('menu') }}" class="call_to-btn btn_white-border">
+              Detection
+            </a>
+          </div>
+        </div>
+        <div class="hero_img-container">
+          <div>
+            <img src={{ url_for('static', filename="images/monkeypox2.png" ) }} alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="common_style">
+
+  <script type="text/javascript" src={{ url_for('static', filename="js/jquery-3.4.1.min.js" ) }}></script>
+  <script type="text/javascript" src={{ url_for('static', filename="js/bootstrap.js" ) }}></script>
+
+ 
+</body>
+
+</html>

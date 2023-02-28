@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename="css/bootstrap.css" ) }} />
+    <!-- progress barstle -->
+    <!-- <link rel="stylesheet" href="css/css-circular-prog-bar.css"> -->
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+    <!-- font wesome stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href={{ url_for('static', filename="css/main-style.css" ) }} rel="stylesheet" />
+    <!-- responsive style -->
+    <link href={{ url_for('static', filename="css/responsive.css" ) }} rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="css/css-circular-prog-bar.css"> -->
+    <title>Image Detection</title>
+
+    
+</head>
+
+<body>
+    <section>
+        <div class="card-body text-end">
+            <a href="{{ url_for('menu') }}">
+                <img class="img-fluid" style="width:50px;"
+                src={{ url_for('static', filename="images/menu.png" ) }}  alt="avatar">
+            </a>
+        </div>
+        <div class="container text-center">
+            <div class="title text-center">
+                <h1>MonkeyPox Prediction</h1>
+                <hr>
+            </div>
+            <form class="mt-5" action=/predict_monkeypox  method="POST" enctype="multipart/form-data">
+                <h4>Click below to upload <strong>Image</strong>.</h4>
+                <div class="form-group">
+                    <label>
+                        <input type="file" name="file" id="file" style="display:none" accept="image/*" required>
+                        <img class="mt-3" src={{ url_for('static', filename="images/upload.png") }} width="30%">
+                    </label>
+                </div>                
+                <button type="submit" class="btn btn-secondary mt-3">Submit & Predict</button>
+            </form>
+        </div>
+        {% if pred %}
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card px-5 py-3 my-3">
+                        <img class="mx-auto d-block" src="data:image/png;base64, {{plot_url}}" height="400px" width="400px">
+                        <h5 class="text-center">{{conf}} {{pred}}</h5>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card px-5 py-3 my-3">
+                        {% if string_pred == 'MonkeyPox' %}
+                        <h5 class="card-title">Bagaimana Cara Pencegahan Monkeypox?</h5>
+                        <p style="text-align: justify;">Cacar monyet merupakan penyakit yang sembuh sendiri dengan gejala yang berlangsung dari 2 hingga 4 minggu. Namun, tentu kita tetap perlu melindungi diri dan keluarga agar terhindar dari penyakit ini. Beberapa langkah pencegahan yang bisa diterapkan, seperti: </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Menerapkan perilaku hidup bersih dan sehat</li>
+                            <li class="list-group-item">Memasak daging dengan benar dan matang</li>
+                            <li class="list-group-item">Menghindari kontak dengan hewan liar</li>
+                            <li class="list-group-item">Menghindari berbagi penggunaan alat makan dengan orang lain</li>
+                            <li class="list-group-item">Menghindari kontak fisik dengan orang yang terinfeksi atau material yang terkontaminasi</li>
+                        </ul>
+                        <hr>
+                        <p style="text-align: justify;">
+                            Setelah lebih jauh mengenal penyakit ini, Sahabat jangan lagi panik dan khawatir berlebih, ya. Terapkan langkah pencegahan semaksimal mungkin untuk melindungi diri dan keluarga.
+                            Namun, jika Sahabat mengalami gejala serupa cacar monyet, segera datangi fasilitas kesehatan terdekat untuk mendapatkan penanganan yang tepat. Supaya kita tetap aman dan Prima!
+                        </p>
+                        {% else %}
+                        <h5 class="card-title">Bagaimana Cara Pencegahan Penyakit Kulit Lainnya?</h5>
+                        <p style="text-align: justify;">Sebagian penyakit kulit tidak bisa dicegah, terutama yang disebabkan oleh genetik. Namun, sebagian lainnya terutama yang menular bisa dicegah dengan menerapkan berbagai usaha perawatan untuk kulit seperti di bawah ini: </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tidak berbagi peralatan pribadi dengan orang lain seperti alat makan dan mandi</li>
+                            <li class="list-group-item">Menghindari kontak langsung dengan kulit orang yang terinfeksi</li>
+                            <li class="list-group-item">Melakukan vaksinasi terutama untuk penyakit seperti cacar air</li>
+                            <li class="list-group-item">Menghindari paparan alergen atau bahan iritan seperti produk kimia yang keras</li>
+                            <li class="list-group-item">Menghindari paparan sinar matahari berlebih langsung ke kulit</li>
+                            <li class="list-group-item">Tidak menggaruk kulit yang gatal, meradang, atau iritasi</li>
+                            <li class="list-group-item">Membersihkan terlebih dahulu peralatan umum sebelum digunakan misal sendok di warung makan</li>
+                            <li class="list-group-item">Menjaga sistem kekebalan tubuh dengan makan makanan bergizi seimbang dan cukup istirahat</li>
+                        </ul>
+                        <hr>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+       
+        
+</body>
+
+</html>

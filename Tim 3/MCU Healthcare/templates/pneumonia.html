@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Home</title>
+</head>
+<style media="screen">
+    button.btn-primary{
+        background-color: #fc036b;
+        padding: 6px 16px;
+        border: none;
+        border-radius: 100px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+</style>
+<body>
+    <!-- Navbar -->
+    <header class="p-3 bg-light text-black">
+        <nav class="navbar navbar-expand navbar-light bg-light shadow shadow-sm mb-2 px-2">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img src={{ url_for('static', filename="img/logo.svg" ) }} width="100px" height="auto"
+            class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}"><button class="btn-primary">Home</button></a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <!-- Navbar End  -->
+
+    <section>
+        <div class="container my-5 text-center">
+            <div class="title text-center">
+                <h1>Pneumonia Prediction</h1>
+                <hr>
+            </div>
+            <form class="mt-5" action=/predict_pneumonia  method="POST" enctype="multipart/form-data">
+                <h4>Click below to upload<strong>an image</strong>.</h4>
+                <div class="form-group">
+                    <label>
+                        <input type="file" name="file" id="file" style="display:none" accept="image/*" required>
+                        <img src={{ url_for('static', filename="img/cloud.png") }} width="50%">
+                    </label>
+                </div>                
+                <button type="submit" class="btn btn-primary mt-5">Submit and Predict</button>
+            </form>
+        </div>
+        {% if pred %}
+        <div class="text-center mb-5">
+            <img src="data:image/png;base64, {{plot_url}}" height="400px" width="400px">
+            <h2>Prediction   : <i> {{pred}} </i></h2>
+        </div>
+        {% endif %}
+    </section>
+    
+
+    <section class="pt-2 pb-1 bg-dark">
+        <div class="footer text-center text-white mt-2">
+            <p>Copyright 2022</p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+</html>

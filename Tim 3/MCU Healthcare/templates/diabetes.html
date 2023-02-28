@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Home</title>
+</head>
+<style media="screen">
+    button.btn-primary{
+        background-color: #fc036b;
+        padding: 6px 16px;
+        border: none;
+        border-radius: 100px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+    }
+</style>
+<body>
+    <!-- Navbar -->
+    <header class="p-3 bg-light text-black">
+        <nav class="navbar navbar-expand navbar-light bg-light shadow shadow-sm mb-2 px-2">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img src={{ url_for('static', filename="img/logo.svg" ) }} width="100px" height="auto"
+            class="d-inline-block align-top" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}"><button class="btn-primary">Home</button></a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <!-- Navbar End  -->
+
+    <section>
+        <div class="container my-5">
+            <div class="title text-center">
+                <h1>Diabetes Prediction</h1>
+                <hr>
+            </div>
+            <form action="/predict_diabetes" method="POST">
+                <div class="row mt-5">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="mb-1">
+                            <label for="Pregnancies" class="form-label">Pregnancies</label>
+                            <input class="form-control" id="Pregnancies" type="number" name="pregnancies" placeholder="Number of Pregnancies eg. 0" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="Glucose" class="form-label">Glucose</label>
+                            <input class="form-control" id="Glucose" type="number" name="glucose" placeholder="Glucose (mg/dL) eg. 87" required><br>
+                        </div>
+                        <div class="mb-1">
+                            <label for="BloodPressure" class="form-label">Blood Pressure</label>
+                            <input class="form-control" id="BloodPressure" type="number" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 90" required><br>
+                        </div>
+                        <div class="mb-1">
+                            <label for="SkinThickness" class="form-label">Skin Thickness</label>
+                            <input class="form-control" id="SkinThickness" type="number" name="skinthickness" placeholder="Skin Thickness (mm) eg. 32" required><br>
+                        </div>
+                        <div class="mb-1">
+                            <label for="Insulin" class="form-label">Insulin</label>
+                            <input class="form-control" id="Insulin" type="number" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="BMI" class="form-label">Body Mass Index</label>
+                            <input class="form-control" id="BMI" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 21.5" required><br>
+                        </div>
+                        <div class="mb-1">
+                            <label for="DPF" class="form-label">Diabetes Pedigree Function</label>
+                            <input class="form-control" id="DPF" type="number" step="any" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.62" required><br>
+                        </div>
+                        <div class="mb-1">
+                            <label for="Age" class="form-label">Age</label>
+                            <input class="form-control" id="Age" type="number" name="age" placeholder="Age (years) eg. 45" required><br>
+                        </div>
+                        <div class="mb-1">
+                            <label for="GlucosePregnancies" class="form-label">Glucose * Pregnancies</label>
+                            <input class="form-control" id="GlucosePregnancies" type="number" name="glucose_pregnancies" placeholder="Glucose Pregnancies eg. 888 (148 * 6)" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="InsulinPregnancies" class="form-label">Insuline * Pregnancies</label>
+                            <input class="form-control" id="InsulinPregnancies" type="number" name="insuline_pregnancies" placeholder="Insuline Pregnancies eg. 10360 (148 * 70)" required><br>    
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="mb-1">
+                            <label for="Obesity1" class="form-label">Obesity 1</label>
+                            <input class="form-control" id="Obesity1" type="number" name="obesity1" min="0" max="1" placeholder="Obesity 1 eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="Obesity2" class="form-label">Obesity 2</label>
+                            <input class="form-control" id="Obesity2" type="number" name="obesity2" min="0" max="1" placeholder="Obesity 2 eg. 0 or 1" required><br>       
+                        </div>
+                        <div class="mb-1">
+                            <label for="Obesity3" class="form-label">Obesity 3</label>
+                            <input class="form-control" id="Obesity3" type="number" name="obesity3" min="0" max="1" placeholder="Obesity 3 eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="Overweight" class="form-label">Overweight</label>
+                            <input class="form-control" id="Overweight" type="number" name="overweight" min="0" max="1" placeholder="Overweight 3 eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="Underweight" class="form-label">Underweight</label>
+                            <input class="form-control" id="Underweight" type="number" name="underweight" min="0" max="1" placeholder="Underweight eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="InsulinNormal" class="form-label">Insulin Normal</label>
+                            <input class="form-control" id="InsulinNormal" type="number" name="insulin_normal" min="0" max="1" placeholder="Insulin Normal  eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="GlucoseNormal" class="form-label">Glucose Normal</label>
+                            <input class="form-control" id="GlucoseNormal" type="number" name="glucose_normal" min="0" max="1" placeholder="Glucose Normal eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="GlucoseOverweight" class="form-label">Glucose Overweight</label>
+                            <input class="form-control" id="GlucoseOverweight" type="number" name="glucose_overweight" min="0" max="1" placeholder="Glucose Overweight eg. 0 or 1" required><br>    
+                        </div>
+                        <div class="mb-1">
+                            <label for="GlucoseHigh" class="form-label">Glucose High</label>
+                            <input class="form-control" id="GlucoseHigh" type="number" name="glucose_high" min="0" max="1" placeholder="Glucose High eg. 0 or 1" required><br>    
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit and Predict</button>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                {% if  hasil_prediksi %}
+                <h5 class="title">Hasil Prediksi</h5>
+                    {% if hasil_prediksi == 'Danger' %}
+                        <p class="card-text">Sistem menunjukkan bahwa kamu<strong> {{nilai_kepercayaan}}% {{hasil_prediksi}} terjangkit penyakit diabetes</strong> mendapatkan beasiswa</p>
+                    {% else %}
+                        <p class="card-text">Sistem menunjukkan bahwa kamu<strong> {{nilai_kepercayaan}}% {{hasil_prediksi}}</strong> tidak terjangkit penyakit diabetes</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="pt-2 pb-1 bg-dark">
+        <div class="footer text-center text-white mt-2">
+            <p>Copyright 2022</p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+</html>
